@@ -6,13 +6,13 @@
 
 {% block content %}
 
-<div class = "login">
+<div class = "login" style="text-align: center;">
 
     <h1>Login</h1>
 
     <form method="POST" action="">
         {% csrf_token %}
-        <table>
+        <table style="margin-left:auto; margin-right:auto;">
             <tr>
                 <td>Username: </td>
                 <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
@@ -22,16 +22,12 @@
                 <td>Password: </td>
                 <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
             </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
         </table>
+        <td><input class="btn login_btn" type="submit" value="Login" style="background-color:aqua; margin-top:5px;"></td>
     </form>
 
     {% if messages %}
-        <ul>
+        <ul style="margin-left: auto ;">
             {% for message in messages %}
                 <li>{{ message }}</li>
             {% endfor %}
