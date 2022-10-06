@@ -1,3 +1,4 @@
+import imp
 from django.urls import path
 from wishlist.views import show_wishlist
 from wishlist.views import return_data_XML
@@ -7,6 +8,8 @@ from wishlist.views import return_data_JSON_by_id
 from wishlist.views import register
 from wishlist.views import login_user
 from wishlist.views import logout_user
+from wishlist.views import show_wishlist_ajax
+from wishlist.views import create_wishlist_ajax
 
 app_name = 'wishlist'
 
@@ -19,4 +22,6 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
+    path('ajax/', show_wishlist_ajax, name='show_wishlist_ajax'),
+    path('ajax/submit', create_wishlist_ajax, name='create_wishlist_ajax'),
 ]
